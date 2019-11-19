@@ -1,0 +1,68 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "(gcc) Build All",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-ansi",
+                "-pedantic",
+                "-Wall",
+                "-g",
+                "-o",
+                "${workspaceFolder}\\bin\\bin.exe",
+                "${workspaceFolder}\\hello.c"
+            ],
+            "options": {
+                "cwd": "C:\\Strawberry\\c\\bin",
+                "statusbar": {
+                    "label": "[Build...]"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+        },
+        {
+            "type": "shell",
+            "label": "(gcc) build active file",
+            "command": "gcc",
+            "args": [
+                "-ansi",
+                "-pedantic",
+                "-Wall",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "statusbar": {
+                    "hide": true
+                },
+                "cwd": "C:\\Strawberry\\c\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "(bin) run",
+            "command": "${workspaceFolder}\\bin\bin.exe",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "statusbar": {
+                    "label": "[Run!]"
+                }
+            },
+            "group": "none"
+        }
+    ]
+  }
