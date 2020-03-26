@@ -1,0 +1,6 @@
+{
+    "remote.SSH.defaultExtensions": [
+        "ms-vscode.cpptools"
+    ],
+    "remote.restoreForwardedPorts": true
+}

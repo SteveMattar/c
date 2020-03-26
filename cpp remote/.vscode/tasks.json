@@ -1,0 +1,55 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "(gcc) Build All",
+            "type": "shell",
+            "command": "./build.sh",
+            "options": {
+                "cwd": "${workspaceFolder}/hello",
+                "statusbar": {
+                    "label": "[Build...]"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+        },
+        {
+            "type": "process",
+            "label": "(gdbserver) start debug server",
+            "dependsOn": [
+                "(gcc) Build All",
+            ],
+            "command": "./debug.sh",
+            "options": {
+                "cwd": "${workspaceFolder}/hello",
+                "statusbar": {
+                    "label": "[Debug...]"
+                }
+            },
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "(bin) run",
+            "dependsOn": [
+                "(gcc) Build All",
+            ],
+            "command": "./bin/hello",
+            "options": {
+                "cwd": "${workspaceFolder}/hello",
+                "statusbar": {
+                    "label": "[Run!]"
+                }
+            },
+            "group": "none"
+        }
+    ]
+  }
