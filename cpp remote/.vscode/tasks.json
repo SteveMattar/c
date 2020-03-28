@@ -6,9 +6,9 @@
         {
             "label": "(gcc) Build All",
             "type": "shell",
-            "command": "./build.sh",
+            "command": "make",
             "options": {
-                "cwd": "${workspaceFolder}/hello",
+                "cwd": "${workspaceFolder}/${input:path}",
                 "statusbar": {
                     "label": "[Build...]"
                 }
@@ -19,17 +19,21 @@
             },
             "problemMatcher": [
                 "$gcc"
-            ],
+            ]
         },
         {
             "type": "process",
-            "label": "(gdbserver) start debug server",
+            "label": "(gdbserver) Start debug server",
             "dependsOn": [
-                "(gcc) Build All",
+                "(gcc) Build All"
             ],
-            "command": "./debug.sh",
+            "command": "gdbserver",
+            "args": [
+                "0.0.0.0:9999",
+                "${input:program}"
+            ],
             "options": {
-                "cwd": "${workspaceFolder}/hello",
+                "cwd": "${workspaceFolder}/${input:path}",
                 "statusbar": {
                     "label": "[Debug...]"
                 }
@@ -37,19 +41,39 @@
             "group": "none"
         },
         {
-            "type": "shell",
-            "label": "(bin) run",
+            "type": "process",
+            "label": "(bin) Run",
             "dependsOn": [
-                "(gcc) Build All",
+                "(gcc) Build All"
             ],
-            "command": "./bin/hello",
+            "command": "./${input:program}",
             "options": {
-                "cwd": "${workspaceFolder}/hello",
+                "cwd": "${workspaceFolder}/${input:path}",
                 "statusbar": {
                     "label": "[Run!]"
                 }
             },
             "group": "none"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "program",
+            "description": "Name of executable",
+            "type": "promptString",
+            "default": "hello"
+        },
+        {
+            "id": "path",
+            "description": "Relative path of executable",
+            "type": "pickString",
+            "default": "hello",
+            "options": [
+                "hello",
+                "mutex",
+                "condvar",
+                "waitable_bounded_queue"
+            ]
         }
     ]
   }

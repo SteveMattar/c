@@ -6,13 +6,13 @@
     "configurations": [
         {
             "name": "(gdb) Launch",
-            "preLaunchTask": "(gcc) Build All",
+            "preLaunchTask": "${defaultBuildTask}",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/hello/bin/hello",
+            "program": "${input:program}",
             "args": [],
             "stopAtEntry": true,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/${input:path}",
             "environment": [],
             "externalConsole": true,
             "linux": {
@@ -32,6 +32,26 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "program",
+            "description": "Name of executable",
+            "type": "promptString",
+            "default": "hello"
+        },
+        {
+            "id": "path",
+            "description": "Relative path of executable",
+            "type": "pickString",
+            "default": "hello",
+            "options": [
+                "hello",
+                "mutex",
+                "condvar",
+                "waitable_bounded_queue"
             ]
         }
     ]

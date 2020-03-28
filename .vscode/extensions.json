@@ -1,0 +1,52 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"dbaeumer.vscode-eslint",
+		"msjsdiag.debugger-for-chrome",
+		"ms-azuretools.vscode-docker",
+		"ms-kubernetes-tools.vscode-kubernetes-tools",
+		"mauve.terraform",
+		"ms-vscode-remote.remote-ssh",
+		"ms-vscode-remote.remote-ssh-edit",
+		"ms-vscode-remote.remote-wsl",
+		"ms-vscode.cpptools",
+		"ms-vscode.powershell",
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"ms-vsliveshare.vsliveshare",
+		"ms-vsliveshare.vsliveshare-audio",
+		"karigari.chat",
+		"vsls-contrib.spaces",
+		"lostintangent.vsls-whiteboard",
+		"donjayamanne.git-extension-pack",
+		"donjayamanne.githistory",
+		"codezombiech.gitignore",
+		"eamodio.gitlens",
+		"mhutchie.git-graph",
+		"GitHub.vscode-pull-request-github",
+		"KnisterPeter.vscode-github",
+		"ziyasal.vscode-open-in-github",
+		"vsls-contrib.gistfs",
+		"yzhang.markdown-all-in-one",
+		"davidanson.vscode-markdownlint",
+		"hookyqr.beautify",
+		"esbenp.prettier-vscode",
+		"alefragnani.bookmarks",
+		"coenraads.bracket-pair-colorizer",
+		"softwaredotcom.swdc-vscode",
+		"spmeesseman.vscode-taskexplorer",
+		"robertoachar.vscode-essentials-snippets",
+		"formulahendry.code-runner",
+		"janjoerke.jenkins-pipeline-linter-connector",
+		"tabeyti.jenkins-jack",
+		"redhat.vscode-xml",
+		"redhat.vscode-yaml"
+	],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": [
+		
+	]
+}

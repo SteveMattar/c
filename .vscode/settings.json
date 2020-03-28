@@ -1,0 +1,6 @@
+{
+    "editor.suggestSelection": "first",
+    "files.autoSave": "afterDelay",
+    "remote.restoreForwardedPorts": true,
+    "git.autofetch": true
+}
